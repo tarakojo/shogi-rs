@@ -1,6 +1,6 @@
 use std::fmt;
 use std::iter;
-
+use serde::{Serialize, Deserialize};
 ///  Represents each side of player. Black player moves first.
 ///
 /// # Examples
@@ -14,7 +14,7 @@ use std::iter;
 ///    Color::White => unreachable!(),
 /// }
 /// ```
-#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, Serialize, Deserialize, Hash)]
 pub enum Color {
     Black,
     White,

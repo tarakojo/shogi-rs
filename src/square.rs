@@ -1,7 +1,7 @@
 use crate::Color;
 use std::fmt;
 use std::iter;
-
+use serde::{Serialize, Deserialize};
 const ASCII_1: u8 = b'1';
 const ASCII_9: u8 = b'9';
 const ASCII_LOWER_A: u8 = b'a';
@@ -27,7 +27,7 @@ const ASCII_LOWER_I: u8 = b'i';
 /// assert_eq!(4, sq.file());
 /// assert_eq!(4, sq.rank());
 /// ```
-#[derive(Debug, PartialEq, Eq, Clone, Copy, Hash)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, Hash, Serialize, Deserialize)]
 pub struct Square {
     inner: u8,
 }

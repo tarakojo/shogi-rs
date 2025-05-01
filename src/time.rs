@@ -1,6 +1,6 @@
 use std::cmp::min;
 use std::time::Duration;
-
+use serde::{Serialize, Deserialize};
 use crate::Color;
 
 /// Represents various time controls.
@@ -44,7 +44,7 @@ use crate::Color;
 /// assert_eq!(Duration::from_secs(8), fischer_clock.black_time());
 /// assert_eq!(Duration::from_secs(10), fischer_clock.white_time());
 /// ```
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
 pub enum TimeControl {
     Byoyomi {
         black_time: Duration,

@@ -1,8 +1,8 @@
 use crate::{PieceType, Square};
 use std::fmt;
-
+use serde::{Serialize, Deserialize};
 /// Represents a move which either is a normal move or a drop move.
-#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, Serialize, Deserialize)]
 pub enum Move {
     Normal {
         from: Square,

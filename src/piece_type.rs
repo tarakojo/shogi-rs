@@ -1,8 +1,8 @@
 use std::fmt;
 use std::iter;
-
+use serde::{Serialize, Deserialize};
 /// Represents a kind of pieces.
-#[derive(Debug, PartialEq, Eq, Clone, Copy)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, Serialize, Deserialize)]
 pub enum PieceType {
     King,
     Rook,
