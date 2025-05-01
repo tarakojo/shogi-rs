@@ -105,6 +105,20 @@ impl PieceType {
         )
     }
 
+    pub fn is_promoted(self) -> bool {
+        matches!(
+            self,
+            PieceType::ProRook | PieceType::ProBishop | PieceType::ProSilver | PieceType::ProKnight | PieceType::ProLance | PieceType::ProPawn
+        )
+    }
+
+    pub fn is_promotable(self) -> bool {
+        matches!(
+            self,
+            PieceType::Pawn | PieceType::Lance | PieceType::Knight | PieceType::Silver | PieceType::Bishop | PieceType::Rook
+        )
+    }
+
     /// Converts the instance into the unique number for array indexing purpose.
     #[inline(always)]
     pub fn index(self) -> usize {
