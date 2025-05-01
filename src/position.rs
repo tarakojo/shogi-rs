@@ -931,6 +931,12 @@ impl Position {
 
         format!("{} {} {} {}", board, color, hand, self.ply)
     }
+
+    pub fn from_sfen(sfen: &str) -> Result<Self, SfenError> {
+        let mut pos = Position::default();
+        pos.set_sfen(sfen)?;
+        Ok(pos)
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////////
