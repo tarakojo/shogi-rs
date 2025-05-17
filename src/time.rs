@@ -44,7 +44,7 @@ use crate::Color;
 /// assert_eq!(Duration::from_secs(8), fischer_clock.black_time());
 /// assert_eq!(Duration::from_secs(10), fischer_clock.white_time());
 /// ```
-#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq, Eq)]
 pub enum TimeControl {
     Byoyomi {
         black_time: Duration,
